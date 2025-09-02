@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phụ lục NCKH</title>
+  <style>
+    :root {
+      --maxw: 900px;
+      --accent: #0a66c2;
+      --muted: #6b7280;
+      --bg: #f9fafb;
+    }
+    body {
+      margin: 0; 
+      font-family: "Segoe UI", Roboto, 'Times New Roman';
+      background: var(--bg); 
+      color: #111827;
+    }
+    .container { max-width: var(--maxw); margin: auto; padding: 20px; }
+    header, main, footer {
+      background: white; 
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+    }
+/*=============================================================================*/
+    header { text-align: center; padding: 24px; } /* Font chữ tiêu đề */
+    header h1 { margin: 12px 0 8px; font-size: 50px; color: var(--accent);font-weight:bold; } /* Giáo viên hướng dẫn */
+    header p { margin: 4px 0; color: var(--muted); font-size: 22px; font-weight: bold; } /*Dòng chữ Tác giả*/
+
+    /* Ảnh bìa giữ tỉ lệ 1920x1080 */
+    .hero img { 
+      width: 50%;
+      aspect-ratio: 4/2.25; /* Giữ tỉ lệ 1920x1080 */
+      object-fit: cover;  /* Cắt vừa khung */
+      border-radius: 12px;
+      display: block;
+      margin: 0 auto;
+    }
+/*=============================================================================*/
+    .toc { padding:8px 12px; } /* Khoang cách bên trong mục lục */
+    .toc h2 { 
+      margin-top: 0;       /* bỏ khoảng cách phía trên của tiêu đề Mục lục */
+      font-size: 30px;     /* cỡ chữ tiêu đề "Mục lục" */
+      color: var(--accent);
+      text-align: center;/* màu chữ (lấy từ biến accent: xanh dương) */
+    }
+
+    .toc ol { 
+      padding-left: 20px;  /* thụt vào bên trái danh sách số thứ tự */
+      margin: 0;           /* bỏ khoảng cách mặc định */
+      font-size: 20px; 
+      font-weight: bold;    /* cỡ chữ của danh sách (các mục) */
+    }
+/*=============================================================================*/
+    /* Accordion style cho mọi mục */
+    .accordion {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      margin: 10px 0;
+      overflow: hidden;
+    }
+    .accordion-header {
+      background: #f3f4f6;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 20px;
+      color: #1f2937;
+    }
+    .accordion-header:hover { background: #e5e7eb; }
+    .accordion-header span { transition: transform 0.3s; }
+    .accordion-header.open span { transform: rotate(90deg); }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: white;
+      padding: 0 16px;
+    }
+    .accordion-content.open { padding: 16px; }
+    p { line-height: 2; }
+
+    figure { text-align: center; margin: 16px 0; } /*Canh giữa khung ảnh và tạo khoảng trên/dưới. */
+    figure img { width: 100%; border-radius: 8px; }
+    figcaption { font-size: 20px; color: var(--muted); margin-top: 6px; font-weight: bold; }
+
+    footer { padding: 16px; text-align: center; color: var(--muted); font-size: 14px; }
+    .toc ol li a {
+  font-size: 22px;   /* chỉnh cỡ chữ */
+  color: #0a66c2;    /* màu chữ xanh dương */
+  text-decoration: none; /* bỏ gạch dưới */
+}
+
+.toc ol li a:hover {
+  text-decoration: underline; /* khi hover thì có gạch dưới */
+}
+.accordion-content {
+  text-align: justify;   /* canh đều 2 bên */
+}
+.accordion-content h3 {
+  font-size: 20px;     /* chỉnh cỡ chữ */
+  font-weight: bold;
+  font-family: "Times New Roman";
+  color: #111827;      /* màu chữ (tùy chọn) */
+  line-height: 1.8;    
+}
+.accordion-content p {
+  font-size: 20px;     /* chỉnh cỡ chữ */
+  font-weight: bold;   /* in đậm */
+  font-family: "Times New Roman"; /* đổi font chữ */
+  color: #111827;      /* màu chữ (tùy chọn) */
+  line-height: 1.8;
+  margin-left: 20px;    /* tăng khoảng cách dòng để dễ đọc */
+}
+.accordion-content p1 {
+  font-size: 20px;     /* chỉnh cỡ chữ */  
+  font-family: "Times New Roman"; /* đổi font chữ */
+  color: #111827;      /* màu chữ (tùy chọn) */
+  line-height: 1.8;    /* tăng khoảng cách dòng để dễ đọc */
+  margin-left: 20px; /* Thục đầu dòng */
+  text-align: justify
+}
+
+/*=============================================================================*/
+
+  </style> 
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="hero">
+        <!-- Thay đường dẫn ảnh bìa tại đây -->
+        <img src="E:\KHKT\Ảnh\bìa.png" alt="Ảnh mở đầu" />
+      </div>
+      <h1>Hệ thống hỗ trợ người có vấn đề về mắt và người cao tuổi</h1>
+      <p>Giáo viên hướng dẫn:Thầy Cao Nguyễn Nam Hiền</p>
+      <p>Tác giả: Tôn Thất Thanh Tuấn, Ngô Khang Huy – 11A16 – THPT Phú Nhuận – 2025</p>
+    </header>
+<!-- Mục lục -->
+    <section class="toc">
+      <h2>Mục lục</h2>
+      <ol id="toc-list"></ol>
+    </section>
+
+    <main>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+      <!-- Mục 1 -->
+      <div class="accordion" id="muc-1">
+        <div class="accordion-header">Mở đầu <span>▶</span></div>
+        <div class="accordion-content">
+          <h3>1. Lí do chọn đề tài</h3>
+          <p1>Đôi mắt được công nhận là một bộ phận thiết yếu bậc nhất của cơ thể, có vai trò không thể thay thế trong cuộc sống hằng ngày. 
+          Khả năng quan sát môi trường xung quanh do cơ quan thị giác mang lại là cơ sở để con người tiếp nhận thông tin, lý giải hành vi, và đặc biệt quan trọng là di chuyển một cách an toàn và hiệu quả.
+          Sự suy giảm chức năng thị giác hoặc tuổi tác có thể gây ra những thách thức đáng kể, ảnh hưởng trực tiếp đến khả năng tự chủ và chất lượng cuộc sống của mỗi cá nhân.</p1>
+          <p>Thực trạng số người suy giảm thị lực và người cao tuổi:</p>
+          <figure>
+            <img src="E:\KHKT\Ảnh\chart.png" alt="" />
+            <figcaption>Hình ảnh thực trạng số người suy giảm thị lực và người cao tuổi</figcaption>
+          </figure>
+        </div>
+      </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+      <!-- Mục 2 -->
+      <div class="accordion" id="muc-2">
+        <div class="accordion-header">Chương 1. Cơ sở lý thuyết <span>▶</span></div>
+        <div class="accordion-content">
+          <p1>Chương này giới thiệu tổng quan về tình hình nghiên cứu và các lý thuyết cơ bản về vận hành camera, tìm hiểu về các đặc trưng của hành vi của con người,
+cơ sở dữ liệu ảnh vật, người, phương pháp thực hiện, phân loại vật tĩnh và vật động, 
+v.v… Những kiến thức cơ bản này là tiền đề để áp dụng vào bài toán làm thiết bị cảm biến hỗ trợ người có vấn đề về mắt và người cao tuổi.
+</p1>
+        <h3>1.1. Kiến trúc mạng Nơ–ron tích chập (Convolutional Neural Network)</h3>
+          <figure>
+            <img src="E:\KHKT\Ảnh\1.1.png" alt="" />
+            <img src="E:\KHKT\Ảnh\1.1b.png" alt="" />
+            <figcaption>Hình  1.1.1 Mô hình CNN sử dụng cho bài toán phân loại (trong phụ lục)</figcaption>
+          </figure>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3>1.2. Kiến trúc mô hình mạng YOLOv11</h3>
+          <figure>
+            <img src="E:\KHKT\Ảnh\1.2.1.png" alt="" />
+            <figcaption>Hình 1.2.1 Quy trình hoạt động của mạng YOLO</figcaption>
+            <img src="E:\KHKT\Ảnh\1.2.2.png" alt="" />
+            <figcaption>Hình 1.2.2 Quy trình hoạt động của mạng YOLO</figcaption>
+          </figure>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3>1.3. Cách thức hoạt động của YOLOv11</h3>
+          <figure>
+            <img src="E:\KHKT\Ảnh\1.3.1.png" alt=""  />
+            <figcaption>Hình 1.3.1 Hoạt động của YOLO</figcaption>
+            <img src="E:\KHKT\Ảnh\1.3.2.png" alt=""  />
+            <figcaption>Hình 1.3.2. Các giá trị tham số của bounding box trong lưới ô</figcaption>
+            <img src="E:\KHKT\Ảnh\1.3.3.png" alt=""  />
+            <figcaption>Hình 1.3.3 Hình ảnh cách trích xuất vector đặc trưng của YOLO</figcaption>
+          </figure>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3>1.4. Tiềm năng của phân loại ảnh bằng các mô hình máy học và camera</h3>
+          <figure>
+            <img src="E:\KHKT\Ảnh\1.4.1.png" alt="" />
+            <figcaption>Hình 1.4.1 Phân loại hình ảnh ung thư vú dựa trên lý thuyết YOLO</figcaption>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+        <h3>1.5. Các bước phân loại ảnh bằng mô hình học sâu</h3>
+          <figure>
+            <img src="E:\KHKT\Ảnh\1.5.1.png" alt="" style="width:100px; height:auto;" />
+            <img src="E:\KHKT\Ảnh\1.5.1b.png" alt="" style="width:100px; height:auto;" />
+            <figcaption>Hình 1.5.1 So sánh quy trình phân loại của mô hình phân loại học máy truyền thống với học sâu </figcaption>
+            <img src="E:\KHKT\Ảnh\1.5.2.png" alt="" style="width:200px; height:auto;" />
+            <figcaption>Hình 1.5.2 Các bước phân loại ảnh </figcaption>
+            <img src="E:\KHKT\Ảnh\1.5.3.png" alt="" style="width:400px; height:auto;" />
+            <figcaption>Hình 1.5.3 Trích xuất đặc trưng và phân loại ảnh với CNN  </figcaption>
+          </figure>
+        </div>
+      </div>
+      <!-- Mục 3 -->
+      <div class="accordion" id="muc-3">
+        <div class="accordion-header">Chương 2. Thiết kế mô hình <span>▶</span></div>
+        <div class="accordion-content">
+          <p1>Chương này cho chúng ta thấy mô hình ở môi trường 3D được thiết kế như thế nào trước khi được in nhựa ra. </p1>
+        </div>
+      </div>
+
+      <!-- Mục 4 -->
+      <div class="accordion" id="muc-4">
+        <div class="accordion-header">Chương 3. Thực nghiệm và đánh giá <span>▶</span></div>
+        <div class="accordion-content">
+          <p1>Chương này cho chúng ta thấy mô hình ở môi trường 3D được thiết kế như thế nào trước khi được in nhựa ra. </p1>
+        </div>
+      </div>      
+      <!-- Mục 4 -->
+      <div class="accordion" id="muc-5">
+        <div class="accordion-header">Chương 4. Kết luận và hướng phát triển <span>▶</span></div>
+        <div class="accordion-content">
+          <p1>Chương này tổng kết lại những gì đã đạt được và chưa đạt được sau khi nghiên cứu và tiến hành đề tài. Từ đó đưa ra kế hoạch nghiên cứu và phát triển tiếp theo trong tương lai.</p1>
+        </div>
+      </div>
+
+      <!-- Phụ lục -->
+      <h2 style="text-align:center; margin-top:40px;">PHỤ LỤC</h2>
+      <div class="accordion" id="pl-1">
+        <div class="accordion-header">PL-1. Bảng tham số & cấu hình <span>▶</span></div>
+        <div class="accordion-content">
+          <p>Liệt kê tham số huấn luyện, cấu hình phần cứng/phần mềm.</p>
+          <figure>
+            <img src="https://picsum.photos/904/420" alt="Bảng tham số" />
+            <figcaption>Hình PL-1. Bảng tham số minh hoạ.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="accordion" id="pl-2">
+        <div class="accordion-header">PL-2. Mẫu biểu khảo sát <span>▶</span></div>
+        <div class="accordion-content">
+          <p>Các mẫu biểu, câu hỏi khảo sát liên quan nghiên cứu.</p>
+          <figure>
+            <img src="https://picsum.photos/905/420" alt="Biểu mẫu" />
+            <figcaption>Hình PL-2. Biểu mẫu khảo sát.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script>
+    // Sinh mục lục tự động
+    const tocList = document.getElementById('toc-list');
+    document.querySelectorAll('.accordion').forEach((acc) => {
+      const id = acc.id;
+      const headerText = acc.querySelector('.accordion-header').innerText.replace("▶","");
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = `#${id}`;
+      a.textContent = headerText.trim();
+      li.appendChild(a);
+      tocList.appendChild(li);
+      
+    });
+
+    // Accordion toggle
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const open = content.style.maxHeight;
+        document.querySelectorAll('.accordion-content').forEach(c => {
+          c.style.maxHeight = null; c.classList.remove('open');
+          c.previousElementSibling.classList.remove('open');
+        });
+        if (!open) {
+          content.style.maxHeight = content.scrollHeight + "px";
+          content.classList.add('open');
+          header.classList.add('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
